@@ -1,0 +1,33 @@
+SELECT prs.prs_emad "username", smo.mod_code "sits_code", smo.psl_code "period_code",
+dpt.dpt_code "dep_code", 2 "role"
+FROM cam_smo smo,
+ins_mod mod,
+ins_dpt dpt,
+ins_prs prs
+where smo.mod_code=mod.mod_code
+AND mod.DPT_CODE=dpt.DPT_CODE
+AND mod.PRS_CODE=prs.PRS_CODE
+AND SUBSTR(mod.mod_code,1,2) != 'ZZ'
+AND m
+
+
+SELECT * FROM INS_MOD WHERE mod_code = 'PL30896'
+
+
+SELECT yps.yps_pslc "period_code", yps.yps_ayrc "acyear", yps.yps_begd "start", yps_endd "end"
+FROM ins_yps yps 
+WHERE yps.yps_begd <= sysdate
+AND yps_endd >= sysdate
+
+
+SELECT DISTINCT * FROM (
+SELECT smo.mod_code "sits_code", smo.psl_code "period_code", mod.mod_snam "shortname", mod.mod_name "fullname", dpt.dpt_code "dep_code"
+FROM cam_smo smo, ins_mod mod, ins_dpt dpt
+where smo.mod_code=mod.mod_code
+AND mod.DPT_CODE=dpt.DPT_CODE
+AND SUBSTR(mod.mod_code,1,2) != 'ZZ'
+AND  smo.ayr_code = '2014/5'
+AND mod.prs_code IS NOT NULL
+AND mod.mod_code LIKE 'PL30896'
+)
+ 

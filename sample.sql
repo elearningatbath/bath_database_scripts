@@ -1,0 +1,1 @@
+SELECT * FROM mdl5_assignment LIMIT 0,100;
