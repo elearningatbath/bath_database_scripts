@@ -1,0 +1,32 @@
+
+/* Retrieve all assignments that have blind marking turned out along with:
+1. No of file submitted to these assignments
+2. No of students submitting the files
+3. Group them by assignment id
+4. Show the category and course they belong to
+
+  */
+SELECT
+   c.id AS 'Course ID',
+  cat.name AS 'Category',
+   a.id AS 'Assignment ID',
+   a.name AS 'Assignment Name'
+  ,a.blindmarking as 'Blind Marking ?'
+
+  ,COUNT(f.id) AS 'No of Files',
+COUNT(DISTINCT(asub.id)) AS 'No of students'
+FROM mdl5_course c
+  JOIN mdl5_assign a ON a.course = c.id
+  JOIN mdl5_assign_submission asub ON asub.assignment = a.id
+                                      AND asub.timemodified >=  1410130800
+                                      AND asub.timemodified  <= 1434841200
+                                      AND asub.status = 'submitted'
+
+  JOIN mdl5_files f ON f.itemid = asub.id  AND (f.filename <> '.' AND f.filearea = 'submission_files'
+                                                AND f.component ='assignsubmission_file'  )
+  JOIN mdl5_course_categories cat ON cat.id = c.category
+
+WHERE c.id <> 1 AND c.visible = 1 AND a.blindmarking = 1
+
+
+GROUP BY a.id
