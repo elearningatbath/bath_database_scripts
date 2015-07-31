@@ -1,6 +1,6 @@
 -- Idea here is to replace the teacher role with permissions to prevent teachers from updating anything on the site.
 -- Role = Teacher Read only
-
+USE moodle26_ro;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/activity_modules:addinstance'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/admin_bookmarks:addinstance'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/admin_bookmarks:myaddinstance'  AND `roleid` = 3 AND `contextid` = 1;
@@ -301,6 +301,7 @@ UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodl
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/rating:rate' AND `roleid` = 5 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/user:viewdetails' AND `roleid` = 5 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='enrol/manual:unenrolself' AND `roleid` = 5 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='enrol/self:unenrolself' AND `roleid` = 5 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/quiz:attempt' AND `roleid` = 5 AND `contextid` = 1;
 
 -- Authenticated User - Some of the capabiities are in the user context rather than course context ( like changing own profile, messaging preferences etc.) and hence we are locking down this role as well
