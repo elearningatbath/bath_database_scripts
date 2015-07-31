@@ -303,6 +303,7 @@ UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodl
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='enrol/manual:unenrolself' AND `roleid` = 5 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='enrol/self:unenrolself' AND `roleid` = 5 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/quiz:attempt' AND `roleid` = 5 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = 0 WHERE `capability` ='mod/quiz:preview' AND `roleid` = 5 AND `contextid` = 1;
 
 -- Authenticated User - Some of the capabiities are in the user context rather than course context ( like changing own profile, messaging preferences etc.) and hence we are locking down this role as well
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='block/calendar_month:myaddinstance' AND `roleid` = 7 AND `contextid` = 1;
