@@ -1,6 +1,25 @@
 
 /*SAMIS Courses with their assignments */
 /* This query would fetch all courses that have SAMIS enrolments */
+
+/*Sample Result*/
+/*id
+idnumber
+fullname
+Submission Point
+Assignment ID
+
+61
+
+HL20050
+
+Performance Assessment
+
+Motion Analysis Project Brief
+
+1 */
+
+
 USE moodle9_live;
 SELECT c.id,c.idnumber,c.fullname,a.name AS "Submission Point",a.id as "Assignment ID"
 FROM mdl5_course c
