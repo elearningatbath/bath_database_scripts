@@ -2,7 +2,7 @@
 -- This will ONLY show assignments that have a GRADEBOOK entry with it.
 -- Note: to get a YES and a NO , get a list of all assignments and do a VLOOKUP between the result sets
 -- WHERE clause can be used to get data only for specific assignments
-SELECT c.id,a.id ,a.name
+SELECT c.id,a.id ,a.name,"Y" as col
 FROM mdl5_assign a
   JOIN mdl5_course c ON c.id = a.course
   -- JOIN mdl5_course_modules cm ON cm.course = c.id
@@ -17,7 +17,7 @@ FROM mdl5_assign a
 GROUP BY a.id
 UNION
 
-SELECT c.id,a.id ,a.name
+SELECT c.id,a.id ,a.name,"N" as col
 FROM mdl5_assign a
   JOIN mdl5_course c ON c.id = a.course
   -- JOIN mdl5_course_modules cm ON cm.course = c.id
