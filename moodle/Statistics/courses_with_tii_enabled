@@ -2,14 +2,17 @@
 -- and show whether these assignment submission points are tii enabled or not
 -- tii enabled = config is "use_turnitin" and its value is 1
 -- Fields would be something like COURSE ID | CM ID | ASSIGNMENT NAME |ASSIGNMENT ID| TII ENABLED?
-SELECT c.id,cm.id,a.name AS "Submission Point",a.id as "Assignment ID"
-  ,
-                  CASE
-                  WHEN ptc.cm  IS NULL THEN 'N' ELSE 'Y'
-                  END  AS 'Tii Enabled ?'
+USE moodle9_live;
+SELECT c.id,cm.id AS 'cmid',a.name AS "Submission Point",a.id as "Assignment ID",
+  FROM_UNIXTIME(a.duedate)
+  -- ,
+                  -- CASE
+                  -- WHEN ptc.cm  IS NULL THEN 'N' ELSE 'Y'
+                  -- END  AS 'Tii Enabled ?'
 FROM mdl5_course c
 
-  JOIN mdl5_assign a ON a.course = c.id
+  JOIN mdl5_assign a ON a.course = c.id AND  a.duedate
+  BETWEEN ? AND ?
   JOIN mdl5_course_modules cm ON cm.instance = a.id AND c.id = cm.course
   #to get the enrolments within a range we need sits-mappings
   -- Turniitin data
@@ -17,4 +20,5 @@ FROM mdl5_course c
                                                    AND cm.module = 26 AND (ptc.name = 'use_turnitin' AND ptc.value = 1)
 WHERE c.visible = 1
 
-GROUP BY a.id;
+
+
