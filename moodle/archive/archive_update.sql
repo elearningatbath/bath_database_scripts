@@ -1,4 +1,3 @@
-USE moodle9_2014; -- Change this every year
 -- Disable Plugins / blocks
 UPDATE mdl5_block SET visible = 0 WHERE name = 'bath_oue';
 UPDATE mdl5_block SET visible = 0 WHERE name = 'sits';
