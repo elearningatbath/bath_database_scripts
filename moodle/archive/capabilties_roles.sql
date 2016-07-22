@@ -1,6 +1,5 @@
 -- Idea here is to replace the teacher role with permissions to prevent teachers from updating anything on the site.
 -- Role = Teacher Read only
-USE moodle26_ro;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/activity_modules:addinstance'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/admin_bookmarks:addinstance'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/admin_bookmarks:myaddinstance'  AND `roleid` = 3 AND `contextid` = 1;
