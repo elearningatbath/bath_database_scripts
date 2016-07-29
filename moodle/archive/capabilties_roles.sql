@@ -269,6 +269,10 @@ UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='enrol
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='gradeimport/csv:view'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='gradeimport/xml:view'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:revealidentities'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backuptargethub'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backuptargetimport'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backupsection'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backupcourse'  AND `roleid` = 3 AND `contextid` = 1;
 
 
 -- Student Read only
