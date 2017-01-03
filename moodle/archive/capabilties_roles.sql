@@ -273,7 +273,9 @@ UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodl
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backuptargetimport'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backupsection'  AND `roleid` = 3 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='moodle/backup:backupcourse'  AND `roleid` = 3 AND `contextid` = 1;
-
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:grade'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:managegrades'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:releasegrades'  AND `roleid` = 3 AND `contextid` = 1;
 
 -- Student Read only
 UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` = 'block/bath_oue:addinstance' AND `roleid` = 5 AND `contextid` = 1;
@@ -872,5 +874,7 @@ UPDATE `mdl5_role_capabilities`  SET `permission` = -1 WHERE `capability` ='book
 UPDATE `mdl5_role_capabilities`  SET `permission` = -1 WHERE `capability` ='block/bath_oue:myaddinstance' AND `roleid` = 11 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities`  SET `permission` = -1 WHERE `capability` ='block/course_overview:addinstance' AND `roleid` = 11 AND `contextid` = 1;
 UPDATE `mdl5_role_capabilities`  SET `permission` = -1 WHERE `capability` ='local/ltiprovider:manage' AND `roleid` = 11 AND `contextid` = 1;
-
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:grade'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:managegrades'  AND `roleid` = 3 AND `contextid` = 1;
+UPDATE `mdl5_role_capabilities` SET `permission` = -1 WHERE `capability` ='mod/assign:releasegrades'  AND `roleid` = 3 AND `contextid` = 1;
 
